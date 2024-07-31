@@ -1,0 +1,10 @@
+base_api_url=http://localhost:8080/api/v3
+PET_BY_ID=/pet/{id}
+PET_BODY=/pet
+STORE_BY_ID=/store/order/{id}
+STORE_INVENTORY=/store/inventory
+ORDER_BODY=/store/order
+USER_BODY=/user
+USER_LOGIN=/user/login
+USER_LOGOUT=/user/logout
+USER_BY_NAME=/user/{username}

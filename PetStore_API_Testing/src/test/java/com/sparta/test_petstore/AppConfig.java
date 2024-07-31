@@ -23,22 +23,17 @@ public class AppConfig {
     }
 
     public static String getBaseUri() {
-        return properties.getProperty("api_url");
+        return properties.getProperty("base_api_url");
     }
 
-    public static String getToken() {
-        return properties.getProperty("api_token");
+    public static String getPetByIdPath(){
+        return properties.getProperty("PET_BY_ID");
+    }
+    
+    public static String getPetBodyPath(){
+        return properties.getProperty("PET_BODY");
     }
 
-    public static String getRepoPath() {
-        return properties.getProperty("repo_path");
-    }
 
-    public  static String getOwner(){
-        return properties.getProperty("owner");
-    }
 
-    public  static String getRepoName(){
-        return properties.getProperty("repo_name");
-    }
 }
