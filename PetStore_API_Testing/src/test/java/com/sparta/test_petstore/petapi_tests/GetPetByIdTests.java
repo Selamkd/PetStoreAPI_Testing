@@ -11,7 +11,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class GetPetByIdTests {
-
     private static Response happyResponse;
     private static Response sadResponse;
     private static Pet happyPet;
@@ -21,13 +20,13 @@ public class GetPetByIdTests {
     @BeforeAll
     public static void beforeAll(){
         happyResponse = RestAssured
-                .given(Utils.getPetById(1))
+                .given(Utils.petById(1))
                 .when()
                 .get()
                 .thenReturn();
         happyPet = happyResponse.getBody().as(Pet.class);
         sadResponse = RestAssured
-                .given(Utils.getPetById(10000))
+                .given(Utils.petById(10000))
                 .when()
                 .get()
                 .thenReturn();
@@ -51,6 +50,14 @@ public class GetPetByIdTests {
    @DisplayName("Get pet by ID returns a pet with the same ID")
    void getPetById_returnsAPetWithSameId() {
         MatcherAssert.assertThat(happyPet.getId(), Matchers.is(1));
+   }
+   
+   
+   @Test
+   @DisplayName("Get pet by ID returns a pet with the name Cat 1")
+   void getPetByIdReturnsAPetWithTheNameCat1() {
+       MatcherAssert.assertThat(happyPet.getName(), Matchers.is("Cat 1"));
+       
    }
 
 

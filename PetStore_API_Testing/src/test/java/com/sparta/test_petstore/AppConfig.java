@@ -34,6 +34,34 @@ public class AppConfig {
         return properties.getProperty("PET_BODY");
     }
 
+    public static String getStoreByIDPath(){
+        return properties.getProperty("STORE_BY_ID");
+    }
+
+    public static String getStoreInventoryPath(){
+        return properties.getProperty("STORE_INVENTORY");
+    }
+
+    public static String getOrderBodyPath(){
+        return properties.getProperty("ORDER_BODY");
+    }
+    public static String getStoreInventory() {return properties.getProperty("STORE_INVENTORY");}
+    public static String getUserBodyPath(){
+        return properties.getProperty("USER_BODY");
+    }
+
+    public static String getUserLoginPath(){
+        return properties.getProperty("USER_LOGIN");
+    }
+
+    public static String getUserLogoutPath(){
+        return properties.getProperty("USER_LOGOUT");
+    }
+
+    public static String getUserByNamePath(){
+        return properties.getProperty("USER_BY_NAME");
+    }
+
 
 
 }

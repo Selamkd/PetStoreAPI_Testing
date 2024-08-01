@@ -5,6 +5,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Pet {
 
+	public Pet(int id, String name, Category category, List<String> photoUrls, List<TagsItem> tags, String status ) {
+		this.photoUrls = photoUrls;
+		this.name = name;
+		this.id = id;
+		this.category = category;
+		this.tags = tags;
+		this.status = status;
+	}
+
+	public Pet(){
+	}
+
 	@JsonProperty("photoUrls")
 	private List<String> photoUrls;
 

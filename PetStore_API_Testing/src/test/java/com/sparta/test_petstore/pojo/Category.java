@@ -4,6 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Category{
 
+	public Category(){}
+
+	public Category(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
 	@JsonProperty("name")
 	private String name;
 

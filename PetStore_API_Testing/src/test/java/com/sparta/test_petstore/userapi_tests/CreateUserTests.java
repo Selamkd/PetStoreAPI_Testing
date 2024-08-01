@@ -14,46 +14,39 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostPetTests {
+public class CreateUserTests {
     private static Response happyResponse;
     private static Response sadResponse;
-    private static Pet happyPet;
-
+    private static User user;
+    private static User happyUser;
 
 
     @BeforeAll
     public static void beforeAll() throws JsonProcessingException {
 
-        Category category = new Category(1, "Dogs");
-        TagsItem tag = new TagsItem(0, "String");
-        List<String> photoUrls = new ArrayList<>();
-        List<TagsItem> tags = new ArrayList<>();
-        photoUrls.add("Test photo");
-        tags.add(tag);
-        Pet pet = new Pet(105, "Horse",
-                category, photoUrls, tags, "available");
+        user = new User(10, "theUser", "John", "Doe",
+                "John@email.com", "Password123", "123456789", 1);
 
         happyResponse = RestAssured
-                .given(Utils.petBody(pet))
+                .given(Utils.userBody(user))
                 .when()
-                .log().all()
                 .post()
                 .thenReturn();
 
-        happyPet = happyResponse.getBody().as(Pet.class);
+        happyUser = happyResponse.getBody().as(User.class);
 
     }
 
     @Test
-    @DisplayName("Successfully adding a valid pet")
-    void postPetByBody(){
+    @DisplayName("Successfully created a new account")
+    void postNewAccount(){
         MatcherAssert.assertThat(happyResponse.statusCode(), Matchers.is(200));
     }
 
     @Test
-    @DisplayName("New added pet has the same id")
-    void newPetSameName(){
-        MatcherAssert.assertThat(happyPet.getId(), Matchers.is(105));
+    @DisplayName("New user have the same ID")
+    void newUserHaveSameId(){
+        MatcherAssert.assertThat(happyUser.getId(), Matchers.is(10));
     }
 
 }
