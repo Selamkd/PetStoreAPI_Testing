@@ -18,12 +18,17 @@ The framework covers the following endpoints:
 1. Navigate to the src/test directory.
 2. Run the tests using your preferred IDE or via command line
    ` mvn test `
-   
+
+## Dependencies 
+   - Rest Assured
+   - Jackson
+   - Junit
 
 ## Test Paths
+
  Happy Path and Sad Path tests are implemented for most endpoints.
 
- Examples:
+## Examples:
 
  ### Happy Path Tests
 - Get Pet by ID: Retrieve a pet that exists and verify the details match the expected results.
@@ -41,3 +46,5 @@ The framework covers the following endpoints:
 
 ## Utility Functions 
  - Utils.java: Provides utility functions for creating request specifications.
+
+
