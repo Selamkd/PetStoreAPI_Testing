@@ -1,7 +1,7 @@
 # PetStore API Test Framework
 ## Project Goal
 
-The goal of this project was to create a functional test framework for the PetStore API, testing numerous functional features and aimed to identify any possible defects in the API through our testing and report them accordingly.
+The goal of this project was to create a functional test framework for the [PetStore API](https://petstore3.swagger.io/#/), testing numerous functional features and aimed to identify any possible defects in the API through our testing and report them accordingly.
 
 The framework covers the following endpoints:
 - Get pet by ID
